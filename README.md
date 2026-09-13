@@ -2,7 +2,7 @@
 
 A multi-step agentic workflow for [aitrainingplan.app](https://aitrainingplan.app). An athlete's goal, availability and last four weeks of training go in, and a certified week of structured workouts comes out as JSON, Markdown and an `.ics` file you can drop straight into a calendar. Zero dependencies, Node 22, plain ESM. It follows the same shape as the coach generator in my own fitness app, cut down to what I could build in the timed window for the We The Flywheel assessment.
 
-Sample output: [cyclist-taper plan](out/cyclist-taper/plan.md), its [run log](out/cyclist-taper/run-log.json), and the [rule proof](out/cyclist-taper/recertify-first-pass.json) from the taper fix below. The Sunday cron regenerates these demo fixtures, so Marco stays 9 days out every week.
+Browse the outputs at [cwbmuller.github.io/aitrainingplan-pipeline](https://cwbmuller.github.io/aitrainingplan-pipeline/) (a static viewer in `index.html` that reads the `out/` files). Sample output: [cyclist-taper plan](out/cyclist-taper/plan.md), its [run log](out/cyclist-taper/run-log.json), and the [rule proof](out/cyclist-taper/recertify-first-pass.json) from the taper fix below. The Sunday cron regenerates these demo fixtures, so Marco stays 9 days out every week.
 
 ## The seven steps
 
