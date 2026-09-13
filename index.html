@@ -164,8 +164,9 @@ for (const id of ATHLETES) {
   b.textContent = id; b.dataset.id = id; b.onclick = () => load(id);
   tabs.appendChild(b);
 }
-const start = location.hash.slice(1);
-load(ATHLETES.includes(start) ? start : ATHLETES[0]);
+const fromHash = () => { const h = location.hash.slice(1); load(ATHLETES.includes(h) ? h : ATHLETES[0]); };
+window.addEventListener('hashchange', fromHash);
+fromHash();
 </script>
 </body>
 </html>
