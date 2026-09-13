@@ -9,8 +9,11 @@ export function certify(plan, contract) {
   const days = Array.isArray(plan?.days) ? plan.days : null;
   if (!days || days.length !== 7) return [v(HARD, 'shape', `expected 7 days, got ${days ? days.length : 'none'}`)];
   days.forEach((d, i) => {
+    if (!d || typeof d !== 'object') { out.push(v(HARD, 'shape', `day ${i} is not an object`)); return; }
     if (d.day !== DAY_ORDER[i]) out.push(v(HARD, 'shape', `day ${i} should be ${DAY_ORDER[i]}, got ${d.day}`));
     if (typeof d.minutes !== 'number' || d.minutes < 0) out.push(v(HARD, 'shape', `${d.day}: minutes must be a non-negative number`));
+    if (d.type === 'rest' && d.minutes > 0) out.push(v(HARD, 'shape', `${d.day}: rest day with ${d.minutes} minutes`));
+    if (d.type !== 'rest' && d.minutes === 0) out.push(v(HARD, 'shape', `${d.day}: ${d.type} session with 0 minutes`));
     if (!d.purpose) out.push(v(SOFT, 'one-job', `${d.day}: missing purpose`));
   });
   if (out.some((x) => x.rule === 'shape')) return out;
