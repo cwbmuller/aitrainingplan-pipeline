@@ -2,6 +2,8 @@
 
 A multi-step agentic workflow for [aitrainingplan.app](https://aitrainingplan.app). An athlete's goal, availability and last four weeks of training go in, and a certified week of structured workouts comes out as JSON, Markdown and an `.ics` file you can drop straight into a calendar. Zero dependencies, Node 22, plain ESM. It follows the same shape as the coach generator in my own fitness app, cut down to what I could build in the timed window for the We The Flywheel assessment.
 
+Sample output: [cyclist-taper plan](out/cyclist-taper/plan.md), its [run log](out/cyclist-taper/run-log.json), and the [rule proof](out/cyclist-taper/recertify-first-pass.json) from the taper fix below. The Sunday cron regenerates these demo fixtures, so Marco stays 9 days out every week.
+
 ## The seven steps
 
 Every model call is logged with latency and token usage, and the whole trail ends up in `out/<athlete>/run-log.json`.
@@ -30,11 +32,11 @@ Three hand-written fixtures live in `athletes/`: `marathon-10wk` (Thandi, ten we
 
 ## Design decisions
 
-- **The principles are one document with two consumers.** `src/principles.mjs` is eight written rules. The designer gets them in its system prompt as intent, and the certifier enforces the same list as code. Keeping them in one place stops the prompt and the checks drifting apart.
+- **The principles are one document with two consumers.** `src/principles.mjs` is nine written rules. The designer gets them in its system prompt as intent, and the certifier enforces the ones that can be expressed as code (injury notes stay advisory). Keeping them in one file makes drift between prompt and checks easy to spot.
 - **One designer call.** I've run the two-engines-and-merge version of this before. It doubled cost and latency and the plans weren't any better, so this runs one.
 - **Deterministic gates, advisory judge.** Only the certifier decides whether a week ships. LLM-as-judge is non-deterministic, and you can't test a gate you can't reproduce, so the judge's verdict is logged beside the plan and never blocks it.
 - **Repair regenerates the whole week.** Patching one day breaks the constraints on its neighbours (move a hard session and you've probably created a back-to-back), so the revision asks for a complete week with the violation list as input.
-- **A deterministic fallback.** There's always a certifiable week to publish, even when the model misses twice.
+- **A deterministic fallback.** A template week built from the contract when the model misses twice. It isn't a guarantee: an athlete with only two available days can't satisfy the 35% longest-session rule, and in that case the run refuses to publish.
 - **Refuse rather than publish dirty.** If the fallback somehow fails certification too, `run.mjs` throws. Nothing with a hard violation lands in `out/`.
 
 ## Where it broke
