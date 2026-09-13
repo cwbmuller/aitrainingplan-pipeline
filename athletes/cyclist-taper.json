@@ -1,0 +1,13 @@
+{
+  "id": "cyclist-taper",
+  "name": "Marco",
+  "sport": "cycling",
+  "goal": "Gran fondo, 120 km with 2,000 m climbing",
+  "event_date_days_out": 9,
+  "weekly_hours_available": 8,
+  "days_available": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  "last_4_weeks_minutes": [480, 520, 560, 600],
+  "longest_recent_session_minutes": 240,
+  "injuries": [],
+  "notes": "Indoor trainer on weekdays, outdoor on weekends."
+}

@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//aitrainingplan-pipeline//EN
+BEGIN:VEVENT
+UID:cyclist-taper-20260915@aitrainingplan
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20260915
+SUMMARY:Indoor Taper Openers (60 min)
+DESCRIPTION:Maintain high-end neuromuscular sharpness and leg speed without fatigue.\n15 min easy spin warm-up\, 4 x 2 min at race threshold pace with 2 min easy recovery\, 5 x 30 sec high cadence efforts with 90 sec easy\, 15 min cool down.
+END:VEVENT
+BEGIN:VEVENT
+UID:cyclist-taper-20260916@aitrainingplan
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+SUMMARY:Indoor Recovery Spin (50 min)
+DESCRIPTION:Promote blood flow and aerobic maintenance.\n50 min easy spin in Zone 1-2 on indoor trainer at 90+ RPM.
+END:VEVENT
+BEGIN:VEVENT
+UID:cyclist-taper-20260917@aitrainingplan
+DTSTAMP:20260917T000000Z
+DTSTART;VALUE=DATE:20260917
+SUMMARY:Indoor Steady Endurance (60 min)
+DESCRIPTION:Maintain endurance engine while keeping stress minimal.\n10 min warm-up\, 40 min steady Zone 2 aerobic riding\, 10 min cool down.
+END:VEVENT
+BEGIN:VEVENT
+UID:cyclist-taper-20260919@aitrainingplan
+DTSTAMP:20260919T000000Z
+DTSTART;VALUE=DATE:20260919
+SUMMARY:Outdoor Taper Long Ride (120 min)
+DESCRIPTION:Maintain outdoor bike handling and aerobic conditioning in a reduced-volume package.\n120 min easy Zone 2 outdoor ride on rolling terrain\, capping efforts on any climbs.
+END:VEVENT
+BEGIN:VEVENT
+UID:cyclist-taper-20260920@aitrainingplan
+DTSTAMP:20260920T000000Z
+DTSTART;VALUE=DATE:20260920
+SUMMARY:Outdoor Easy Aerobic Spin (60 min)
+DESCRIPTION:Keep legs light and test race equipment and nutrition.\n60 min easy Z1-Z2 spin on flat outdoor roads with 3 x 15 sec cadence accelerations.
+END:VEVENT
+END:VCALENDAR

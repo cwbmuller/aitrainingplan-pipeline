@@ -1,0 +1,101 @@
+{
+  "contract": {
+    "athlete_id": "marathon-10wk",
+    "name": "Thandi",
+    "sport": "running",
+    "goal": "Finish a marathon in under 4:00",
+    "days_out": 70,
+    "taper": false,
+    "days_available": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Sat",
+      "Sun"
+    ],
+    "history_minutes": [
+      260,
+      280,
+      300,
+      240
+    ],
+    "recent_avg_minutes": 270,
+    "peak_minutes": 300,
+    "longest_recent_session_minutes": 105,
+    "max_weekly_minutes": 297,
+    "max_hard_sessions": 2,
+    "injuries": [
+      "left achilles niggle, avoid hills and speed on consecutive days"
+    ],
+    "notes": "Runs mornings before work. Sunday is the only day with time for a long run."
+  },
+  "plan": {
+    "week_summary": "This week builds baseline endurance towards the sub-4 marathon goal with 288 total minutes. It features two non-consecutive hard sessions (intervals on Tuesday, tempo on Thursday) kept on flat terrain to protect the left Achilles, balanced by structured easy runs, a dedicated Friday rest day, and a 98-minute Sunday long run.",
+    "days": [
+      {
+        "day": "Mon",
+        "type": "easy",
+        "intensity": "easy",
+        "minutes": 35,
+        "title": "Monday Easy Aerobic",
+        "purpose": "easy aerobic",
+        "structure": "35 min easy jog at conversational pace on flat terrain"
+      },
+      {
+        "day": "Tue",
+        "type": "intervals",
+        "intensity": "hard",
+        "minutes": 40,
+        "title": "Flat Speed Intervals",
+        "purpose": "intervals",
+        "structure": "10 min easy warm-up, 5 x 3 min at 10k effort with 2 min easy walk/jog recovery on flat ground, 5 min easy cool-down"
+      },
+      {
+        "day": "Wed",
+        "type": "easy",
+        "intensity": "easy",
+        "minutes": 35,
+        "title": "Mid-Week Recovery Run",
+        "purpose": "easy aerobic",
+        "structure": "35 min gentle recovery run on flat path, focus on smooth cadence"
+      },
+      {
+        "day": "Thu",
+        "type": "tempo",
+        "intensity": "hard",
+        "minutes": 45,
+        "title": "Marathon Pace Tempo",
+        "purpose": "tempo",
+        "structure": "10 min easy warm-up, 25 min steady at goal marathon pace (~5:40/km) on flat terrain, 10 min easy cool-down"
+      },
+      {
+        "day": "Fri",
+        "type": "rest",
+        "intensity": "rest",
+        "minutes": 0,
+        "title": "Complete Rest Day",
+        "purpose": "rest",
+        "structure": "No running; full rest and Achilles calf gentle self-massage"
+      },
+      {
+        "day": "Sat",
+        "type": "easy",
+        "intensity": "easy",
+        "minutes": 35,
+        "title": "Saturday Aerobic Flush",
+        "purpose": "easy aerobic",
+        "structure": "35 min relaxed morning run on soft, flat surfaces"
+      },
+      {
+        "day": "Sun",
+        "type": "long",
+        "intensity": "moderate",
+        "minutes": 98,
+        "title": "Sunday Endurance Long Run",
+        "purpose": "long",
+        "structure": "98 min steady long run at easy conversational effort, practice race hydration strategy on flat route"
+      }
+    ]
+  }
+}

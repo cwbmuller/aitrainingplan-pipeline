@@ -1,0 +1,100 @@
+{
+  "contract": {
+    "athlete_id": "cyclist-taper",
+    "name": "Marco",
+    "sport": "cycling",
+    "goal": "Gran fondo, 120 km with 2,000 m climbing",
+    "days_out": 9,
+    "taper": true,
+    "days_available": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
+    "history_minutes": [
+      480,
+      520,
+      560,
+      600
+    ],
+    "recent_avg_minutes": 540,
+    "peak_minutes": 600,
+    "longest_recent_session_minutes": 240,
+    "max_weekly_minutes": 420,
+    "max_hard_sessions": 1,
+    "injuries": [],
+    "notes": "Indoor trainer on weekdays, outdoor on weekends."
+  },
+  "plan": {
+    "week_summary": "Taper week for Marco ahead of the Gran Fondo. Overall volume is reduced to 350 minutes to shed fatigue while keeping intensity sharp with one short interval opener session on Tuesday. Weekday rides stay on the indoor trainer and weekend rides move outdoors.",
+    "days": [
+      {
+        "day": "Mon",
+        "type": "rest",
+        "intensity": "rest",
+        "minutes": 0,
+        "title": "Complete Rest Day",
+        "purpose": "Allow baseline recovery and kick off the taper week fresh.",
+        "structure": "Full rest day, gentle mobility, and hydration."
+      },
+      {
+        "day": "Tue",
+        "type": "intervals",
+        "intensity": "hard",
+        "minutes": 60,
+        "title": "Indoor Taper Openers",
+        "purpose": "Maintain high-end neuromuscular sharpness and leg speed without fatigue.",
+        "structure": "15 min easy spin warm-up, 4 x 2 min at race threshold pace with 2 min easy recovery, 5 x 30 sec high cadence efforts with 90 sec easy, 15 min cool down."
+      },
+      {
+        "day": "Wed",
+        "type": "easy",
+        "intensity": "easy",
+        "minutes": 50,
+        "title": "Indoor Recovery Spin",
+        "purpose": "Promote blood flow and aerobic maintenance.",
+        "structure": "50 min easy spin in Zone 1-2 on indoor trainer at 90+ RPM."
+      },
+      {
+        "day": "Thu",
+        "type": "easy",
+        "intensity": "easy",
+        "minutes": 60,
+        "title": "Indoor Steady Endurance",
+        "purpose": "Maintain endurance engine while keeping stress minimal.",
+        "structure": "10 min warm-up, 40 min steady Zone 2 aerobic riding, 10 min cool down."
+      },
+      {
+        "day": "Fri",
+        "type": "rest",
+        "intensity": "rest",
+        "minutes": 0,
+        "title": "Complete Rest Day",
+        "purpose": "Rest legs for the outdoor weekend ride and upcoming race week.",
+        "structure": "Full rest day, light foam rolling, and race logistics prep."
+      },
+      {
+        "day": "Sat",
+        "type": "long",
+        "intensity": "easy",
+        "minutes": 120,
+        "title": "Outdoor Taper Long Ride",
+        "purpose": "Maintain outdoor bike handling and aerobic conditioning in a reduced-volume package.",
+        "structure": "120 min easy Zone 2 outdoor ride on rolling terrain, capping efforts on any climbs."
+      },
+      {
+        "day": "Sun",
+        "type": "easy",
+        "intensity": "easy",
+        "minutes": 60,
+        "title": "Outdoor Easy Aerobic Spin",
+        "purpose": "Keep legs light and test race equipment and nutrition.",
+        "structure": "60 min easy Z1-Z2 spin on flat outdoor roads with 3 x 15 sec cadence accelerations."
+      }
+    ]
+  }
+}

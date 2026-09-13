@@ -1,0 +1,13 @@
+{
+  "id": "marathon-10wk",
+  "name": "Thandi",
+  "sport": "running",
+  "goal": "Finish a marathon in under 4:00",
+  "event_date_days_out": 70,
+  "weekly_hours_available": 6,
+  "days_available": ["Mon", "Tue", "Wed", "Thu", "Sat", "Sun"],
+  "last_4_weeks_minutes": [260, 280, 300, 240],
+  "longest_recent_session_minutes": 105,
+  "injuries": ["left achilles niggle, avoid hills and speed on consecutive days"],
+  "notes": "Runs mornings before work. Sunday is the only day with time for a long run."
+}

@@ -1,0 +1,70 @@
+{
+  "athlete": "marathon-10wk",
+  "designer_model": "gemini-3.6-flash",
+  "stages": [
+    {
+      "stage": "contract",
+      "result": "ok · cap 297 min · max hard 2"
+    },
+    {
+      "stage": "certify#1",
+      "result": "clean"
+    },
+    {
+      "stage": "judge (advisory)",
+      "result": "tweak 4/5 via openai"
+    }
+  ],
+  "calls": [
+    {
+      "stage": "designer",
+      "model": "gemini-3.6-flash",
+      "ms": 11089,
+      "usage": {
+        "promptTokenCount": 697,
+        "candidatesTokenCount": 690,
+        "totalTokenCount": 2821,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 697
+          }
+        ],
+        "thoughtsTokenCount": 1434,
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "stage": "judge",
+      "model": "gpt-5-mini",
+      "ms": 11820,
+      "usage": {
+        "prompt_tokens": 915,
+        "completion_tokens": 1017,
+        "total_tokens": 1932,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 768,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    }
+  ],
+  "source": "designer, first pass",
+  "judge": {
+    "vendor": "openai",
+    "verdict": {
+      "verdict": "tweak",
+      "overall": 4,
+      "assessment": "This is a well-structured, conservative week that respects Thandi’s constraints: two non-consecutive hard sessions, flat routes to protect the left Achilles, a single long run on Sunday, and total weekly volume sitting just under her recent peaks. Warm-ups, cool-downs, and a full rest day are included — all appropriate given the Achilles niggle and morning-before-work routine. Two small concerns: the 5 x 3-minute 10k intervals are a meaningful tendon load and could aggravate the Achilles if intensity or mechanics slip, and there’s no dedicated strength/calf eccentric work to proactively address the niggle. Also, the week is close to her allowed weekly max minutes, so any progression needs to be cautious.",
+      "top_fix": "Replace 5x3' intervals with 6x2' at 10k effort (same stimulus, slightly less tendon strain) and add two 12–15 minute strength + calf-eccentric sessions (easy core/hip/slow eccentric calf raises) on Mon and Sat (post-run or evening) to improve Achilles resilience."
+    }
+  },
+  "soft_violations": [],
+  "total_ms": 22913
+}

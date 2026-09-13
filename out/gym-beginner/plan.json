@@ -1,0 +1,97 @@
+{
+  "contract": {
+    "athlete_id": "gym-beginner",
+    "name": "Priya",
+    "sport": "gym",
+    "goal": "Build general strength, first time following a program",
+    "days_out": null,
+    "taper": false,
+    "days_available": [
+      "Mon",
+      "Wed",
+      "Fri",
+      "Sat"
+    ],
+    "history_minutes": [
+      0,
+      0,
+      45,
+      60
+    ],
+    "recent_avg_minutes": 26,
+    "peak_minutes": 60,
+    "longest_recent_session_minutes": 45,
+    "max_weekly_minutes": 86,
+    "max_hard_sessions": 2,
+    "injuries": [],
+    "notes": "Has dumbbells and a bench at home, no barbell."
+  },
+  "plan": {
+    "week_summary": "Introductory full-body home strength week focusing on fundamental movement patterns using dumbbells and bench. Includes 2 structured hard strength days, 1 light accessory strength session, and 1 easy mobility session, staying within the target 85 total minutes.",
+    "days": [
+      {
+        "day": "Mon",
+        "type": "strength",
+        "intensity": "hard",
+        "minutes": 25,
+        "title": "Full Body Dumbbell Strength A",
+        "purpose": "Build baseline muscular strength and master foundational squat and press patterns",
+        "structure": "5 min dynamic warm-up; 3 sets x 8 Dumbbell Goblet Squats, 3 sets x 8 Dumbbell Flat Bench Presses, 3 sets x 10 Dumbbell Single-Arm Rows (2 min rest between sets)"
+      },
+      {
+        "day": "Tue",
+        "type": "rest",
+        "intensity": "rest",
+        "minutes": 0,
+        "title": "Rest Day",
+        "purpose": "Recovery and muscular adaptation",
+        "structure": "Complete rest, light walking permitted"
+      },
+      {
+        "day": "Wed",
+        "type": "mobility",
+        "intensity": "easy",
+        "minutes": 15,
+        "title": "Guided Mobility & Movement Prep",
+        "purpose": "Improve joint range of motion and decrease muscle tightness",
+        "structure": "15 min routine: Cat-camels, thoracic spine rotations, doorway chest stretch, bodyweight hip openers"
+      },
+      {
+        "day": "Thu",
+        "type": "rest",
+        "intensity": "rest",
+        "minutes": 0,
+        "title": "Rest Day",
+        "purpose": "Recovery and muscular adaptation",
+        "structure": "Complete rest, light walking permitted"
+      },
+      {
+        "day": "Fri",
+        "type": "strength",
+        "intensity": "hard",
+        "minutes": 25,
+        "title": "Full Body Dumbbell Strength B",
+        "purpose": "Build baseline muscular strength and master posterior chain and overhead patterns",
+        "structure": "5 min dynamic warm-up; 3 sets x 8 Dumbbell Romanian Deadlifts, 3 sets x 8 Dumbbell Overhead Presses, 3 sets x 10 Dumbbell Reverse Lunges (2 min rest between sets)"
+      },
+      {
+        "day": "Sat",
+        "type": "strength",
+        "intensity": "moderate",
+        "minutes": 20,
+        "title": "Core & Posterior Chain Stability",
+        "purpose": "Enhance trunk stability and motor control with low fatigue",
+        "structure": "5 min warm-up; 3 rounds of 10 Dumbbell Glute Bridges on Bench, 30 sec Plank hold, 12 Standing Dumbbell Russian Twists (60 sec rest between rounds); 3 min cool-down stretch"
+      },
+      {
+        "day": "Sun",
+        "type": "rest",
+        "intensity": "rest",
+        "minutes": 0,
+        "title": "Rest Day",
+        "purpose": "Recovery and muscular adaptation",
+        "structure": "Complete rest, light walking permitted"
+      }
+    ]
+  }
+}

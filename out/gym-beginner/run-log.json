@@ -1,0 +1,70 @@
+{
+  "athlete": "gym-beginner",
+  "designer_model": "gemini-3.6-flash",
+  "stages": [
+    {
+      "stage": "contract",
+      "result": "ok · cap 86 min · max hard 2"
+    },
+    {
+      "stage": "certify#1",
+      "result": "clean"
+    },
+    {
+      "stage": "judge (advisory)",
+      "result": "tweak 4/5 via openai"
+    }
+  ],
+  "calls": [
+    {
+      "stage": "designer",
+      "model": "gemini-3.6-flash",
+      "ms": 11055,
+      "usage": {
+        "promptTokenCount": 645,
+        "candidatesTokenCount": 759,
+        "totalTokenCount": 2798,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 645
+          }
+        ],
+        "thoughtsTokenCount": 1394,
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "stage": "judge",
+      "model": "gpt-5-mini",
+      "ms": 9589,
+      "usage": {
+        "prompt_tokens": 969,
+        "completion_tokens": 935,
+        "total_tokens": 1904,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 704,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    }
+  ],
+  "source": "designer, first pass",
+  "judge": {
+    "vendor": "openai",
+    "verdict": {
+      "verdict": "tweak",
+      "overall": 4,
+      "assessment": "Solid, appropriately-sized introductory week that matches Priya’s availability and recent training minutes. Exercises are well-chosen for a first-time program using dumbbells and a bench, and the mix of two harder strength days, a lighter stability session, and a mobility day is sensible for recovery and skill acquisition. The plan would benefit from clearer load/progression guidance (warm-up sets, target RPE, what ‘10 reps’ means for unilateral work), and a couple small technique/variation notes to protect form and improve long-term adaptation. Overall ready to use with brief fixes to ensure consistent progression and clarity for a beginner.",
+      "top_fix": "Add explicit load and progression rules to each session (warm-up sets, choose a weight that hits 8 reps with the last 2 reps challenging ≈ RPE 7–8, clarify rep counts per side, and prescribe weekly progression—e.g., add 1–2 reps or 2–5% weight when target reps are achieved for two sessions)."
+    }
+  },
+  "soft_violations": [],
+  "total_ms": 20647
+}

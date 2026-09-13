@@ -1,0 +1,13 @@
+{
+  "id": "gym-beginner",
+  "name": "Priya",
+  "sport": "gym",
+  "goal": "Build general strength, first time following a program",
+  "event_date_days_out": null,
+  "weekly_hours_available": 3,
+  "days_available": ["Mon", "Wed", "Fri", "Sat"],
+  "last_4_weeks_minutes": [0, 0, 45, 60],
+  "longest_recent_session_minutes": 45,
+  "injuries": [],
+  "notes": "Has dumbbells and a bench at home, no barbell."
+}

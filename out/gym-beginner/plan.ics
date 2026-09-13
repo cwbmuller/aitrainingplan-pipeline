@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//aitrainingplan-pipeline//EN
+BEGIN:VEVENT
+UID:gym-beginner-20260914@aitrainingplan
+DTSTAMP:20260914T000000Z
+DTSTART;VALUE=DATE:20260914
+SUMMARY:Full Body Dumbbell Strength A (25 min)
+DESCRIPTION:Build baseline muscular strength and master foundational squat and press patterns\n5 min dynamic warm-up\; 3 sets x 8 Dumbbell Goblet Squats\, 3 sets x 8 Dumbbell Flat Bench Presses\, 3 sets x 10 Dumbbell Single-Arm Rows (2 min rest between sets)
+END:VEVENT
+BEGIN:VEVENT
+UID:gym-beginner-20260916@aitrainingplan
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+SUMMARY:Guided Mobility & Movement Prep (15 min)
+DESCRIPTION:Improve joint range of motion and decrease muscle tightness\n15 min routine: Cat-camels\, thoracic spine rotations\, doorway chest stretch\, bodyweight hip openers
+END:VEVENT
+BEGIN:VEVENT
+UID:gym-beginner-20260918@aitrainingplan
+DTSTAMP:20260918T000000Z
+DTSTART;VALUE=DATE:20260918
+SUMMARY:Full Body Dumbbell Strength B (25 min)
+DESCRIPTION:Build baseline muscular strength and master posterior chain and overhead patterns\n5 min dynamic warm-up\; 3 sets x 8 Dumbbell Romanian Deadlifts\, 3 sets x 8 Dumbbell Overhead Presses\, 3 sets x 10 Dumbbell Reverse Lunges (2 min rest between sets)
+END:VEVENT
+BEGIN:VEVENT
+UID:gym-beginner-20260919@aitrainingplan
+DTSTAMP:20260919T000000Z
+DTSTART;VALUE=DATE:20260919
+SUMMARY:Core & Posterior Chain Stability (20 min)
+DESCRIPTION:Enhance trunk stability and motor control with low fatigue\n5 min warm-up\; 3 rounds of 10 Dumbbell Glute Bridges on Bench\, 30 sec Plank hold\, 12 Standing Dumbbell Russian Twists (60 sec rest between rounds)\; 3 min cool-down stretch
+END:VEVENT
+END:VCALENDAR

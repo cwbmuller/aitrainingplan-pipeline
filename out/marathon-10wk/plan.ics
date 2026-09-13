@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//aitrainingplan-pipeline//EN
+BEGIN:VEVENT
+UID:marathon-10wk-20260914@aitrainingplan
+DTSTAMP:20260914T000000Z
+DTSTART;VALUE=DATE:20260914
+SUMMARY:Monday Easy Aerobic (35 min)
+DESCRIPTION:easy aerobic\n35 min easy jog at conversational pace on flat terrain
+END:VEVENT
+BEGIN:VEVENT
+UID:marathon-10wk-20260915@aitrainingplan
+DTSTAMP:20260915T000000Z
+DTSTART;VALUE=DATE:20260915
+SUMMARY:Flat Speed Intervals (40 min)
+DESCRIPTION:intervals\n10 min easy warm-up\, 5 x 3 min at 10k effort with 2 min easy walk/jog recovery on flat ground\, 5 min easy cool-down
+END:VEVENT
+BEGIN:VEVENT
+UID:marathon-10wk-20260916@aitrainingplan
+DTSTAMP:20260916T000000Z
+DTSTART;VALUE=DATE:20260916
+SUMMARY:Mid-Week Recovery Run (35 min)
+DESCRIPTION:easy aerobic\n35 min gentle recovery run on flat path\, focus on smooth cadence
+END:VEVENT
+BEGIN:VEVENT
+UID:marathon-10wk-20260917@aitrainingplan
+DTSTAMP:20260917T000000Z
+DTSTART;VALUE=DATE:20260917
+SUMMARY:Marathon Pace Tempo (45 min)
+DESCRIPTION:tempo\n10 min easy warm-up\, 25 min steady at goal marathon pace (~5:40/km) on flat terrain\, 10 min easy cool-down
+END:VEVENT
+BEGIN:VEVENT
+UID:marathon-10wk-20260919@aitrainingplan
+DTSTAMP:20260919T000000Z
+DTSTART;VALUE=DATE:20260919
+SUMMARY:Saturday Aerobic Flush (35 min)
+DESCRIPTION:easy aerobic\n35 min relaxed morning run on soft\, flat surfaces
+END:VEVENT
+BEGIN:VEVENT
+UID:marathon-10wk-20260920@aitrainingplan
+DTSTAMP:20260920T000000Z
+DTSTART;VALUE=DATE:20260920
+SUMMARY:Sunday Endurance Long Run (98 min)
+DESCRIPTION:long\n98 min steady long run at easy conversational effort\, practice race hydration strategy on flat route
+END:VEVENT
+END:VCALENDAR

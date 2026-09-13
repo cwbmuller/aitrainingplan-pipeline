@@ -1,0 +1,70 @@
+{
+  "athlete": "cyclist-taper",
+  "designer_model": "gemini-3.6-flash",
+  "stages": [
+    {
+      "stage": "contract",
+      "result": "ok · cap 420 min · max hard 1 · taper"
+    },
+    {
+      "stage": "certify#1",
+      "result": "clean"
+    },
+    {
+      "stage": "judge (advisory)",
+      "result": "tweak 4/5 via openai"
+    }
+  ],
+  "calls": [
+    {
+      "stage": "designer",
+      "model": "gemini-3.6-flash",
+      "ms": 17917,
+      "usage": {
+        "promptTokenCount": 678,
+        "candidatesTokenCount": 743,
+        "totalTokenCount": 3904,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 678
+          }
+        ],
+        "thoughtsTokenCount": 2483,
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "stage": "judge",
+      "model": "gpt-5-mini",
+      "ms": 16141,
+      "usage": {
+        "prompt_tokens": 950,
+        "completion_tokens": 1400,
+        "total_tokens": 2350,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1152,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    }
+  ],
+  "source": "designer, first pass",
+  "judge": {
+    "vendor": "openai",
+    "verdict": {
+      "verdict": "tweak",
+      "overall": 4,
+      "assessment": "Nice, purposeful taper: volume is appropriately reduced relative to Marco’s recent load, there’s a single hard opener to preserve neuromuscular sharpness, and the plan balances indoor weekday control with outdoor weekend specificity and a test of kit/nutrition. The only real concern is the placement and duration of the Saturday long ride — in a taper that should prioritize freshness, a 120‑minute outdoor ride on rolling terrain risks residual fatigue if it falls within the last 3–4 days before the Gran Fondo. Also, the Tuesday threshold blocks are good for sharpness but should be kept short and controlled (power targets or RPE and strict recoveries) so they don’t accumulate unnecessary stress. Overall this is a solid taper that needs one small adjustment to better protect freshness in the days immediately before the event.",
+      "top_fix": "Trim Saturday to ~60–90 minutes (or move it earlier) and make any race‑pace efforts very short (2–3 x 3–5 min) with full recovery so Marco arrives at the final 48–72 hours feeling fresh."
+    }
+  },
+  "soft_violations": [],
+  "total_ms": 34085
+}
