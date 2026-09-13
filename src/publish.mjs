@@ -16,7 +16,7 @@ export function publish({ contract, plan, log, outDir }) {
 function toMarkdown(c, p, log) {
   const total = p.days.reduce((a, d) => a + d.minutes, 0);
   const rows = p.days.map((d) => `| ${d.day} | ${d.type} | ${d.intensity} | ${d.minutes} | ${d.title} | ${d.purpose} | ${d.structure} |`).join('\n');
-  const judge = log.judge ? `\n## Coach's eye (advisory, ${log.judge.vendor})\n\n**${log.judge.verdict.verdict}** (${log.judge.verdict.overall}/5). ${log.judge.verdict.assessment}\n\nTop fix: ${log.judge.verdict.top_fix}\n` : '';
+  const judge = log.judge && log.judge.verdict ? `\n## Coach's eye (advisory, ${log.judge.vendor})\n\n**${log.judge.verdict.verdict}** (${log.judge.verdict.overall}/5). ${log.judge.verdict.assessment}\n\nTop fix: ${log.judge.verdict.top_fix}\n` : '';
   return `# ${c.name}: next week (${c.sport})\n\nGoal: ${c.goal}${c.days_out !== null ? ` · ${c.days_out} days out${c.taper ? ' · TAPER' : ''}` : ''}\n\n${p.week_summary}\n\nTotal ${total} min (cap ${c.max_weekly_minutes}). Source: **${log.source}**.\n\n| Day | Type | Intensity | Min | Session | Purpose | Structure |\n|---|---|---|---|---|---|---|\n${rows}\n${judge}\n## Certification trail\n\n${log.stages.map((s) => `- ${s.stage}: ${s.result}`).join('\n')}\n`;
 }
 

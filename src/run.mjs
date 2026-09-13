@@ -25,18 +25,32 @@ for (const file of files) {
 
     if (certifyOnly) { const plan = JSON.parse(readFileSync(join(outDir, athlete.id, 'plan.json'), 'utf8')).plan; console.log(athlete.id, certify(plan, contract)); continue; }
 
-    let { plan, call } = await design(contract);
-    log.calls.push(slim(call, 'designer'));
-    let violations = certify(plan, contract);
-    log.stages.push({ stage: 'certify#1', result: fmt(violations) });
-
-    if (hardViolations(violations).length) {
-      ({ plan, call } = await design(contract, { revisionOf: plan, violations }));
-      log.calls.push(slim(call, 'revision'));
+    // Model failures (API error, malformed JSON) must not skip recovery. They fall through to the deterministic fallback.
+    let plan = null, violations = [];
+    try {
+      const d = await design(contract);
+      plan = d.plan;
+      log.calls.push(slim(d.call, 'designer'));
       violations = certify(plan, contract);
-      log.stages.push({ stage: 'certify#2 (after revision)', result: fmt(violations) });
-      log.source = 'designer + one revision';
-    } else log.source = 'designer, first pass';
+      log.stages.push({ stage: 'certify#1', result: fmt(violations) });
+      log.source = 'designer, first pass';
+    } catch (e) {
+      log.stages.push({ stage: 'designer', result: `failed: ${e.message}` });
+      violations = [{ severity: 'hard', rule: 'designer', detail: e.message }];
+    }
+
+    if (plan && hardViolations(violations).length) {
+      try {
+        const d = await design(contract, { revisionOf: plan, violations });
+        plan = d.plan;
+        log.calls.push(slim(d.call, 'revision'));
+        violations = certify(plan, contract);
+        log.stages.push({ stage: 'certify#2 (after revision)', result: fmt(violations) });
+        log.source = 'designer + one revision';
+      } catch (e) {
+        log.stages.push({ stage: 'revision', result: `failed: ${e.message}` });
+      }
+    }
 
     if (hardViolations(violations).length) {
       plan = fallbackWeek(contract);
@@ -46,10 +60,16 @@ for (const file of files) {
     }
     if (hardViolations(violations).length) throw new Error(`refusing to publish: fallback still has hard violations: ${fmt(violations)}`);
 
-    const j = await judge(plan, contract);
-    log.calls.push(slim(j.call, 'judge'));
-    log.judge = { vendor: j.vendor, verdict: j.verdict, ...(j.error ? { error: j.error } : {}) };
-    log.stages.push({ stage: 'judge (advisory)', result: `${j.verdict.verdict} ${j.verdict.overall}/5 via ${j.vendor}` });
+    // The judge is advisory, so if both vendors fail we record it and still publish the certified plan.
+    try {
+      const j = await judge(plan, contract);
+      log.calls.push(slim(j.call, 'judge'));
+      log.judge = { vendor: j.vendor, verdict: j.verdict, ...(j.error ? { error: j.error } : {}) };
+      log.stages.push({ stage: 'judge (advisory)', result: `${j.verdict.verdict} ${j.verdict.overall}/5 via ${j.vendor}` });
+    } catch (e) {
+      log.judge = { vendor: 'none', verdict: null, error: e.message };
+      log.stages.push({ stage: 'judge (advisory)', result: `failed, publishing without a verdict: ${e.message}` });
+    }
 
     log.soft_violations = violations;
     log.total_ms = Date.now() - t0;
