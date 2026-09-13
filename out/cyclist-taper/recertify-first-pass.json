@@ -1,0 +1,26 @@
+{
+  "purpose": "Re-certify the 13 Sep 2026 first-pass cyclist-taper plan (commit ed5bb6c) with the certifier after the taper long-session rule was added, then certify the re-run plan for comparison. No model calls.",
+  "contract": {
+    "max_weekly_minutes": 420,
+    "max_hard_sessions": 1,
+    "taper": true,
+    "days_out": 9,
+    "longest_recent_session_minutes": 240
+  },
+  "first_pass_plan": {
+    "commit": "ed5bb6c",
+    "sessions": "Mon 0, Tue 60, Wed 50, Thu 60, Fri 0, Sat 120, Sun 60",
+    "violations": [
+      {
+        "severity": "hard",
+        "rule": "taper",
+        "detail": "taper: longest session 120 min exceeds cap 90 (min of 90 and 50% of recent longest 240)"
+      }
+    ]
+  },
+  "rerun_plan": {
+    "commit": "4494638",
+    "sessions": "Mon 0, Tue 45, Wed 60, Thu 45, Fri 0, Sat 90, Sun 45",
+    "violations": []
+  }
+}
