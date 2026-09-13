@@ -36,6 +36,13 @@ export function certify(plan, contract) {
   if (cross.length > 1) out.push(v(HARD, 'sport-match', `${cross.length} cross-training days (${cross.map((d) => d.day).join(', ')}); max one`));
   for (const d of cross) if (d.intensity !== 'easy') out.push(v(HARD, 'sport-match', `${d.day}: cross-training must be easy`));
   if (contract.taper && hard.length > 1) out.push(v(HARD, 'progression', `taper week with ${hard.length} hard sessions`));
+  if (contract.taper) {
+    const cap = taperLongCap(contract);
+    if (longest > cap)
+      out.push(v(HARD, 'taper', `taper: longest session ${longest} min exceeds cap ${cap} (min of 90 and 50% of recent longest ${contract.longest_recent_session_minutes})`));
+    if (contract.days_out !== null && contract.days_out <= 7 && longest > 90)
+      out.push(v(SOFT, 'taper', `taper: event is ${contract.days_out} days out; longest session ${longest} min should not exceed 90 in the final 7 days`));
+  }
   return out;
 }
 
@@ -48,3 +55,7 @@ function matchesSport(d, sport) {
 }
 
 export const hardViolations = (list) => list.filter((x) => x.severity === HARD);
+
+// Taper long-session cap: half of the recent longest, never above 90. Shared with the fallback so the template can't trip it.
+export const taperLongCap = (contract) =>
+  contract.longest_recent_session_minutes > 0 ? Math.min(90, Math.round(contract.longest_recent_session_minutes * 0.5)) : 90;

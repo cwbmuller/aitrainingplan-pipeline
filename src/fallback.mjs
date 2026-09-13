@@ -1,6 +1,7 @@
 // Step 5b: deterministic fallback. Builds a conservative, certifiable week from templates.
 // Deliberately boring. Its job is to never fail certification, not to be inspired.
 import { DAY_ORDER } from './contract.mjs';
+import { taperLongCap } from './certify.mjs';
 
 const T = {
   running: { easy: ['Easy run', 'Conversational pace, nose-breathing effort'], long: ['Long run', 'Steady easy, last 10 min relaxed'], hard: ['Tempo run', '10 min easy, 20 min at comfortably-hard, 10 min easy'], strength: ['Runner strength', '3 rounds: split squat, single-leg RDL, calf raise, plank'] },
@@ -12,7 +13,7 @@ export function fallbackWeek(contract) {
   const t = T[contract.sport];
   const avail = DAY_ORDER.filter((d) => contract.days_available.includes(d));
   const budget = contract.max_weekly_minutes;
-  const longCap = Math.min(Math.round(contract.longest_recent_session_minutes * 1.1) || 40, Math.floor(budget * 0.33));
+  const longCap = Math.min(Math.round(contract.longest_recent_session_minutes * 1.1) || 40, Math.floor(budget * 0.33), contract.taper ? taperLongCap(contract) : Infinity);
   // Order of fill: long on the last available day, one hard session mid-week (unless taper), rest easy.
   const longDay = avail[avail.length - 1];
   const hardDay = contract.max_hard_sessions > 0 ? avail[Math.max(0, Math.floor(avail.length / 2) - 1)] : null;

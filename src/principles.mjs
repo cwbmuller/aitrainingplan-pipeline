@@ -10,6 +10,7 @@ export const PRINCIPLES = [
   { id: 'sport-match', text: 'Sessions match the athlete sport. Cross-training is allowed only as "easy" and only on one day.' },
   { id: 'injuries', text: 'Respect every listed injury note literally.' },
   { id: 'days', text: 'Only schedule on days_available. Every other day is rest.' },
+  { id: 'taper', text: 'In a taper week (contract.taper is true) keep the longest session short: no more than half of longest_recent_session_minutes and never over 90 minutes.' },
 ];
 
 export const digest = () => PRINCIPLES.map((p) => `- ${p.id}: ${p.text}`).join('\n');
