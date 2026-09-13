@@ -1,6 +1,6 @@
 # aitrainingplan-pipeline
 
-A multi-step agentic workflow for [aitrainingplan.app](https://aitrainingplan.app). An athlete's goal, availability and last four weeks of training go in, and a certified week of structured workouts comes out as JSON, Markdown and an `.ics` file you can drop straight into a calendar. Zero dependencies, Node 22, plain ESM. The shape is lifted from the coach generation path I shipped in Kronos Studio, my fitness app that's live in both stores, cut down to what I could build in the timed window for the We The Flywheel assessment.
+A multi-step agentic workflow for [aitrainingplan.app](https://aitrainingplan.app). An athlete's goal, availability and last four weeks of training go in, and a certified week of structured workouts comes out as JSON, Markdown and an `.ics` file you can drop straight into a calendar. Zero dependencies, Node 22, plain ESM. It follows the same shape as the coach generator in my own fitness app, cut down to what I could build in the timed window for the We The Flywheel assessment.
 
 ## The seven steps
 
@@ -28,10 +28,10 @@ node src/run.mjs --certify-only athletes/cyclist-taper.json   # re-certify the e
 
 Three hand-written fixtures live in `athletes/`: `marathon-10wk` (Thandi, ten weeks out with an achilles niggle), `cyclist-taper` (Marco, a gran fondo 9 days out) and `gym-beginner` (Priya, dumbbells only).
 
-## What I borrowed from Kronos
+## Design decisions
 
 - **The principles are one document with two consumers.** `src/principles.mjs` is eight written rules. The designer gets them in its system prompt as intent, and the certifier enforces the same list as code. Keeping them in one place stops the prompt and the checks drifting apart.
-- **One designer call.** An earlier Kronos version ran two engines and merged the result. It doubled cost and latency and the plans weren't any better, so this runs one.
+- **One designer call.** I've run the two-engines-and-merge version of this before. It doubled cost and latency and the plans weren't any better, so this runs one.
 - **Deterministic gates, advisory judge.** Only the certifier decides whether a week ships. LLM-as-judge is non-deterministic, and you can't test a gate you can't reproduce, so the judge's verdict is logged beside the plan and never blocks it.
 - **Repair regenerates the whole week.** Patching one day breaks the constraints on its neighbours (move a hard session and you've probably created a back-to-back), so the revision asks for a complete week with the violation list as input.
 - **A deterministic fallback.** There's always a certifiable week to publish, even when the model misses twice.
